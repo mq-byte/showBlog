@@ -15,6 +15,7 @@ module.exports = appInfo => {
       port: 8080,
       hostname: '0.0.0.0',
     }
-};
+  };
+  
   return config;
 };
