@@ -5,9 +5,7 @@ fetch('/getbloglists', {
     response.json().then((res)=>{
         //初始化文章
         getBlog(res[0].type,res[0].MDs[0]);
-
         for(let i = 0;i < res.length;++i){
-            document.querySelector('#MDtype').innerHTML = '<option value="">请选择</option>';
             document.querySelector('#MDtype').innerHTML += '<option value="'+res[i].MDs+'">'+res[i].type+'</option>';
         }
         for(let i = 0;i < res[0].MDs.length;++i){
