@@ -18,8 +18,10 @@ select{
     float: left;
     /* background: yellow; */
     box-sizing: border-box;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
+    /* border-left: 1px solid #000;
+    border-bottom: 1px solid #000; */
+    background: transparent;
+    color: #fff;
 }
 option{
     height: 40px;
@@ -27,6 +29,7 @@ option{
     text-align: center;
     padding: 0px 5px;
     cursor: pointer;
+    color: #000;
 }
 
 .clearfix:after {
@@ -34,4 +37,33 @@ option{
     height: 0;
     display: block;
     clear: both;
+}
+.mdparase {
+    padding: 0px 20px;
+}
+.header{
+    background: black;
+}
+.header > *{
+    float: left;
+}
+.logo{
+    overflow: hidden;
+    position: absolute;
+    height: 40px;
+    width: 100px
+}
+.logo img{
+    position: absolute;
+    top: -25px;
+}
+.select{
+    width: 100%;
+    height: 40px;
+    padding-left: 100px;
+    box-sizing: border-box;
+    /* background: red; */
+}
+.title{
+    text-align: center;
 }

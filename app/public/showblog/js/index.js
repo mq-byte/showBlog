@@ -1,8 +1,9 @@
+//请求博客列表
 fetch('/getbloglists', {
     method: 'get'
 }).then((response)=>{
     response.json().then((res)=>{
-
+        //初始化文章
         getBlog(res[0].type,res[0].MDs[0]);
 
         for(let i = 0;i < res.length;++i){
@@ -15,8 +16,9 @@ fetch('/getbloglists', {
         document.querySelector('#MDname').value = res[0].MDs[0];
     })
 });
-
+//请求blog
 function getBlog(type,MDs){
+    document.querySelector('.title').innerHTML = MDs;
     fetch('/getblog?type='+type+'&MDs='+MDs, {
         method: 'get'
     }).then((response)=>{
@@ -34,7 +36,7 @@ function getBlog(type,MDs){
       
     });
 }
-
+//选择blog类型
 document.querySelector('#MDtype').onchange = function(){
     var val = this.value.split(',');
     document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
@@ -44,7 +46,7 @@ document.querySelector('#MDtype').onchange = function(){
 }
 
 
-
+//选择内容
 document.querySelector('#MDname').onchange = function(){
     if(this.value !== ''){
         var MDtype = document.querySelector('#MDtype');
