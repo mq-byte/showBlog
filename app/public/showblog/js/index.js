@@ -7,13 +7,14 @@ fetch('/getbloglists', {
         getBlog(res[0].type,res[0].MDs[0]);
 
         for(let i = 0;i < res.length;++i){
+            document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
             document.querySelector('#MDtype').innerHTML += '<option value="'+res[i].MDs+'">'+res[i].type+'</option>';
         }
         for(let i = 0;i < res[0].MDs.length;++i){
             document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
             document.querySelector('#MDname').innerHTML += '<option value="'+res[0].MDs[i]+'">'+res[0].MDs[i]+'</option>';
         }
-        document.querySelector('#MDname').value = res[0].MDs[0];
+        // document.querySelector('#MDname').value = res[0].MDs[0];
     })
 });
 //请求blog
