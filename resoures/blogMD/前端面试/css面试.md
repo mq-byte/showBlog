@@ -134,3 +134,28 @@ CSS选择器的解析是从右向左解析的。若从左向右的匹配，发�
 4、weight和style:这两个值大家一定很熟悉，weight定义字体是否为粗体，style主要定义字体样式，如斜体。 */
 
 ```
+
+## [16. flex布局?](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+
+1. 父级属性：
+flex-direction 主轴方向  
+flex-wrap 是否换行   
+flex-flow 以上两个属性简写  
+justify-content 项目在主轴上的对齐方式  
+align-items 项目在交叉轴上的对齐方式  
+align-content 多条交叉轴对齐方式  
+
+2. 项目属性：
+order 项目排列顺序，越小越靠前  
+flex-grow 项目放大比列  
+flex-shrink 项目缩小比  
+flex-basis 项目占据主轴空间比列  
+flex 以上三个属性集合  
+align-self 项目独有对齐方式  
+
+## 17. div上下左右居中？
+
+## 18. css3动画属性？过度？
+[点我](http://www.w3school.com.cn/css3/css3_animation.asp)
+
+## 19. css有哪些布局？
