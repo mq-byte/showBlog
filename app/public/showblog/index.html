@@ -21,6 +21,23 @@
     <script src="https://cdn.bootcss.com/highlight.js/9.13.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <title>QLQ技术博客</title>
+    <style>
+        .cssQy .hljs{
+            position: fixed;
+            z-index: 10;
+            background: rgba(43, 43, 43, 0.8);
+            width: 50%;
+            height: 50%;
+            top: 40PX;
+            left: 0;
+            transform: translate(-100%,10px);
+        }
+        .cssQy.active .hljs{
+            transition: 2s;
+            transform: translate(80%,10px);
+        }
+       
+    </style>
 </head>
 <body>
     <div class="clearfix header">
@@ -34,36 +51,55 @@
     <h1 class="title">
         QLQ
     </h1>
-    <div class="mdparase">
-        <h2>
-            简介
-        </h2>
-        <div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QLQ会免费给大家提供学习资料与面试题（主要是我自己的笔记啦），内容如下：(主要为web前端的知识，后续会介绍简单算法，设计模式，java，数据库，运维等相关的东西)
-        </div>
-        <ul>
-            <li>
-                vue,angular,react等相关知识
-            </li>
-            <li>
-                js设计模式与技巧
-            </li>
-            <li>
-                页面优化
-            </li>
-            <li>
-                css3动画处理
-            </li>
-            <li>
-                webpack,gulp,rollup等打包工具
-            </li>
-            <li>
-                ... ...
-            </li>
-            
 
-        </ul>
+    <div class="mdparase">
+       
     </div>
+<div id = 'stynone' style="display:none;">
+/*
+来改变一下背景颜色吧
+*/
+body{
+    background: black;
+    color: white;
+}
+.mdparase{
+    /* 改变一下字体颜色吧 */
+    color: burlywood;
+    /* 背景变成褐色会帅气一点么 */
+    background: black;
+}
+/*
+去掉a标签的默认样式吧
+*/
+a {
+    text-decoration:none;
+    outline: none;
+    color: blueviolet;
+}
+
+</div>
+    <style id='sty'>
+
+
+
+
+    </style>
+    <div class="cssQy">
+        <pre>
+            <code>
+/*
+首先还是去掉a标签的默认样式吧
+*/
+a {
+    text-decoration:none;
+    outline: none;
+    color: #000;
+}                
+            </code>
+        </pre>
+    </div>
+
 </body>
 <script src="./js/index.js"></script>
 </html> 
