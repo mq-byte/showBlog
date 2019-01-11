@@ -18,7 +18,7 @@ var mb = `
 
 // 第一次访问标识符
 var first = true;
-
+var firstMd = true;
 //请求博客列表
 fetch('/getbloglists', {
     method: 'get'
@@ -58,7 +58,10 @@ function getBlog(type,MDs){
 }
 //选择blog类型
 document.querySelector('#MDtype').onchange = function(){
-    removeCss();
+    if(firstMd){
+        firstMd = false;
+        removeCss();
+    }
     var val = this.value.split(',');
     document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
     for(let i = 0;i < val.length;++i){
@@ -129,12 +132,13 @@ function setCss(){
                     document.documentElement.scrollTop=10000;
                     if(j >= m){
                         clearInterval(zenT);
+                        //删除页面样式
+                        setTimeout(function(){removeCss();},500)
                     }
                 },70);
                 
 
-                //删除页面样式
-                removeCss();
+                
             }
         },100);
     });
