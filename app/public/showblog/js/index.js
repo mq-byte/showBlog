@@ -78,7 +78,14 @@
         }
     }
 
-
+    //滚动页面
+    var scrollTop = function(x){
+        if(document.documentElement && document.documentElement.scrollTop){
+            document.documentElement.scrollTop = x;
+        }else{
+            document.body.scrollTop = x;
+        }
+    }
     //选择内容
     document.querySelector('#MDname').onchange = function(){
         if(this.value !== ''){
@@ -96,7 +103,7 @@
         firstXR = setInterval(function(){
             var str=data.substring(0,(i = i + 1));
             mdToHTML(str);
-            document.documentElement.scrollTop=10000;
+            scrollTop(10000);
             if(i >= max){
                 clearInterval(firstXR);
                 setCss();
@@ -138,7 +145,7 @@
                     animationEndContent = setInterval(function(){
                         var d = (blogContent+mb).substring(0,j++);
                         mdToHTML(d);
-                        document.documentElement.scrollTop=10000;
+                        scrollTop(10000);
                         if(j >= m){
                             clearInterval(animationEndContent);
                             //删除页面样式
