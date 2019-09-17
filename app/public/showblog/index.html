@@ -39,22 +39,60 @@
         }
        
     </style>
+
+<style type="text/css">
+    #webgl-canvas{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /*background: #7318d9;*/
+        background: #6b13d3;
+        background: -moz-linear-gradient(45deg, #6b13d3 0, #7a25e1 25%, #4962dc 60%);
+        background: -webkit-linear-gradient(45deg, #6b13d3 0, #7a25e1 25%, #4962dc 60%);
+        background: -ms-linear-gradient(45deg, #6b13d3 0, #7a25e1 25%, #4962dc 60%);
+        background: linear-gradient(45deg, #6b13d3 0, #7a25e1 25%, #4962dc 60%);
+        overflow: hidden;
+        z-index: 1;
+    }
+    #webGL
+    {
+        /*opacity: 0.9;*/
+        z-index: 1;
+    }
+    .box-qy{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        overflow-y: scroll;
+    }
+    body{
+        color: white;
+    }
+    </style>
 </head>
 <body>
-    <div class="clearfix header">
-        <div class="logo"><img src="./img/qlqLog.png" alt=""  height="90px"></div>
-        <div class="select">
-            <select name="" id="MDtype" ><option value="">请选择</option></select>
-            <select name="" id="MDname"></select>
+    <div class="box-qy">
+        <div class="clearfix header">
+            <div class="logo"><img src="./img/qlqLog.png" alt=""  height="90px"></div>
+            <div class="select">
+                <select name="" id="MDtype" ><option value="">请选择</option></select>
+                <select name="" id="MDname"></select>
+            </div>
         </div>
-    </div>
-    <div style="height:40px;"></div>
-    <h1 class="title">
-        QLQ
-    </h1>
-
-    <div class="mdparase">
-       
+        <div style="height:40px;"></div>
+        <h1 class="title">
+            QLQ
+        </h1>
+    
+        <div class="mdparase" style="z-index: 10">
+           
+        </div>
     </div>
 <div id = 'stynone' style="display:none;">
 /*
@@ -108,7 +146,19 @@ a {
             </code>
         </pre>
     </div>
+    <div id="webGL" class="webGL" data-color="light">
+        <div  id="webgl-canvas"></div>
 
+        
+    </div>
 </body>
+<script type="text/javascript" src="./js/lib/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="./js/lib/three.js"></script>
+<script type="text/javascript" src="./js/webgl_wave.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		webglWave('init','webGL');
+	});
+</script>
 <script src="./js/index.js"></script>
 </html> 

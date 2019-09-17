@@ -54,14 +54,16 @@
         }).then((response)=>{
             response.text().then((data)=>{
                 // 判断是否是是个人简历并且是否第一次打开
-                if(type == '个人简历' && first){
-                    first = false;
-                    blogContent = data;
-                    personShow(data);
-                }else{
-                    mdToHTML(data);
-                }
+                // if(type == '个人简历' && first){
+                //     first = false;
+                //     blogContent = data;
+                //     personShow(data);
+                // }else{
+                //     mdToHTML(data);
+                // }
                 
+
+                mdToHTML(data);
             });
         });
     }
