@@ -38,11 +38,11 @@
                 document.querySelector('#MDtype').innerHTML += '<option value="'+res[i].MDs+'">'+res[i].type+'</option>';
             }
             for(let i = 0;i < res[0].MDs.length;++i){
-                document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
+                document.querySelector('#MDname').innerHTML = '<option value="">点击选择具体文章</option>';
                 document.querySelector('#MDname').innerHTML += '<option value="'+res[0].MDs[i]+'">'+res[0].MDs[i]+'</option>';
             }
             //获取简历文章
-            getBlog('个人简历','自我介绍');
+            // getBlog('个人简历','自我介绍');
         })
     });
 
@@ -74,7 +74,7 @@
             removeCss();
         }
         var val = this.value.split(',');
-        document.querySelector('#MDname').innerHTML = '<option value="">请选择</option>';
+        document.querySelector('#MDname').innerHTML = '<option value="">点击选择具体文章ß</option>';
         for(let i = 0;i < val.length;++i){
             document.querySelector('#MDname').innerHTML += '<option value="'+val[i]+'">'+val[i]+'</option>';
         }
