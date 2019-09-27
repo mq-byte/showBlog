@@ -1,10 +1,10 @@
-## 1. vue生命周期？[你可能不是真的了解](https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA)
+## 1. vue生命周期？[你可能不是真的了解](https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
 ## 2. 计算属性 vs 监听属性 vs 方法?
 
 ## 3. v-if v-show区别，应用环境？template 组件包裹？
 
-## 4. v-for key?
+## 4. v-for key有什么作用?
 
 ## 5. 数组更新检测机制？defineProperty的理解？vue3.0中的proxy?
 [defineProperty](https://segmentfault.com/a/1190000011294519)
