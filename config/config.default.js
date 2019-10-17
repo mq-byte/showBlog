@@ -16,6 +16,10 @@ module.exports = appInfo => {
       hostname: '0.0.0.0',
     }
   };
-  
+
+  config.siteFile = {
+    '/favicon.ico': '/public/favicon.ico',
+  };
+
   return config;
 };

@@ -9,4 +9,5 @@ module.exports = app => {
   router.get('/getbloglists', controller.home.getbloglists);
   router.get('/getblog', controller.home.getblog);
   app.router.redirect('/public/blog/', '/public/blog/index.html', 302);
+  app.router.redirect('/favicon.ico', '/public/favicon.ico', 301);
 };
