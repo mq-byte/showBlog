@@ -6,7 +6,8 @@
   "dependencies": {
     "egg": "^2.2.1",
     "egg-scripts": "^2.5.0",
-    "egg-static": "^2.1.1"
+    "egg-static": "^2.1.1",
+    "vuepress": "^1.2.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -22,6 +23,8 @@
     "node": ">=8.9.0"
   },
   "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "start": "egg-scripts start --daemon --title=egg-server-pangpangjun-blog",
     "stop": "egg-scripts stop --title=egg-server-pangpangjun-blog",
     "dev": "egg-bin dev",
@@ -32,7 +35,7 @@
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
-    "push":"git add . && git commit -a -m '不想写注释' && git push"
+    "push": "git add . && git commit -a -m '不想写注释' && git push"
   },
   "ci": {
     "version": "8"

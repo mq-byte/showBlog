@@ -8,4 +8,5 @@ module.exports = app => {
   router.get('/', controller.home.index);
   router.get('/getbloglists', controller.home.getbloglists);
   router.get('/getblog', controller.home.getblog);
+  app.router.redirect('/public/blog/', '/public/blog/index.html', 302);
 };
