@@ -1,4 +1,4 @@
-console.log(process.cwd());
+const sidebar = require('./sidebar');
 
 module.exports = {
   title: 'QLQ学习平台',
@@ -7,29 +7,11 @@ module.exports = {
   base:'/public/blog/',
   themeConfig: {
     sidebarDepth: 2,
-    sidebar:{
-      '/js/':[
-        {
-          title: 'javaScript',
-          collapsable: false,
-          children: [
-            'a'
-          ]
-        }
-      ],
-      '/':[
-        {
-          title: 'HOME',
-          collapsable: false,
-          children: [
-            ''
-          ]
-        }
-      ]
-    },
+    sidebar,
     nav: [
-      { text: 'javaScript', link: '/js/a' },
-      { text: 'home', link: '/' }
+      { text: 'webpack', link: '/webpack/base-config' },
+      { text: 'node', link: '/node/nodemon' },
+      { text: 'javaScript', link: '/js/a' }
     ]
   }
 }
