@@ -8,7 +8,7 @@ const fsOb = require('fs');
 class HomeController extends Controller {
 
   async index() {
-    this.ctx.response.redirect('/public/showblog/index.html');
+    this.ctx.response.redirect('/public/blog/');
   }
 
   async getbloglists() {
@@ -37,7 +37,7 @@ class HomeController extends Controller {
 
   async readListMD(files){
     var ps = [];
-    
+
     for(let i = 0;i < files.length;++i){
       ps.push(new Promise((resove)=>{
         ReadMD.readList(pathOb.join(__dirname,'../../resoures/blogMD/')+files[i],(err,data)=>{
@@ -56,6 +56,7 @@ class HomeController extends Controller {
     }
     return await Promise.all(ps);
   }
+
 }
 
 module.exports = HomeController;

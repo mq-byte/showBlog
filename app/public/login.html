@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QLQ登录</title>
+</head>
+<body>
+<form action="/login?_csrf=" method="post">
+    <input type="text" placeholder="用户名" name="username">
+    <input type="password" placeholder="密码" name="password">
+    <button type="submit">登录</button>
+</form>
+<script>
+    function getCookie(name)
+    {
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+        if(arr=document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+    document.getElementsByTagName('form')[0].action += getCookie('csrfToken');
+    // console.log(getCookie('csrfToken'));
+</script>
+</body>
+</html>
