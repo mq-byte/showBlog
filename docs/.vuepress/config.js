@@ -11,7 +11,8 @@ module.exports = {
     nav: [
       { text: 'webpack', link: '/webpack/base-config' },
       { text: 'node', link: '/node/nodemon' },
-      { text: 'javaScript', link: '/js/a' }
+      { text: 'javaScript', link: '/js/regexp' },
+      { text: 'js框架', link: '/fragment/angular' }
     ]
   }
 }

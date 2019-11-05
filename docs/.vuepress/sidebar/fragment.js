@@ -1,10 +1,10 @@
 module.exports = {
-    '/js/':[
+    '/fragment/':[
         {
-            title: 'javaScript',
+            title: 'js框架',
             collapsable: false,
             children: [
-                'regexp'
+                'angular'
             ]
         }
     ]
