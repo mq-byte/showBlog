@@ -9,10 +9,11 @@ module.exports = {
     sidebarDepth: 2,
     sidebar,
     nav: [
+      { text: 'javaScript', link: '/js/regexp' },
       { text: 'webpack', link: '/webpack/base-config' },
       { text: 'node', link: '/node/nodemon' },
-      { text: 'javaScript', link: '/js/regexp' },
-      { text: 'js框架', link: '/fragment/angular' }
+      { text: 'js框架', link: '/fragment/angular' },
+      { text: 'pwa', link: '/pwa/PWA' }
     ]
   }
 }
