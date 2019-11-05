@@ -3,7 +3,7 @@ home: true
 heroText: QLQ
 tagline: 这是一个纯技术的平台
 actionText: 开始 →
-actionLink: /js/a.html
+actionLink: /js/regexp.html
 features:
 - title: 简洁至上
   details: 简短的语句，深刻的理解
