@@ -16,14 +16,14 @@ title: PWA详解
 - manifest.json
 - 消息推送
 
-# Fetch
+## Fetch
 Fetch 提供了许多与XMLHttpRequest相同的功能，为什么要在这里提及这个,因为在我们在service worker环境中是不能去使用XMLHttpRequest对象的，故而这是一个非常重要的api。
 
 **Fetch 的核心在于对 HTTP 接口的抽象，包括 Request，Response，Headers，Body这些接口**
 
 这里只是简单介绍
 
-## 基本用法
+### 基本用法
 
 ```js
 Promise<Response> fetch(input[, init]);
@@ -41,11 +41,11 @@ Promise<Response> fetch(input[, init]);
 5. credentials: 请求的 credentials，如 omit、same-origin 或者 include。为了在当前域名内自动发送 cookie ， 必须提供这个选项， 从 Chrome 50 开始， 这个属性也可以接受 FederatedCredential 实例或是一个 PasswordCredential 实例。
 6. ...
 
-# CacheStorage
+## CacheStorage
 
 这是一个可以缓存浏览器缓存的接口，离线应用的核心就靠他了
 
-## CacheStorage常用方法介绍
+### CacheStorage常用方法介绍
 
 name | 描述 |
 - | - | 
@@ -63,11 +63,11 @@ Cache.keys(request, options) | 返回一个Promise对象，resolve的结果是Ca
 - **ignoreVary**（Boolean）: 该值如果为 true 则匹配时不进行 VARY   部分的匹配。默认值：false  
 - **cacheName**（DOMString）: 代表一个具体的要被搜索的缓存。注意该选项被 Cache.match()方法忽略。
 
-# service worker
+## service worker
 
 这是我们要花时间最多的地方！
 
-## 生命周期
+### 生命周期
 
 1. installing（正在安装）  
 
@@ -90,7 +90,7 @@ Cache.keys(request, options) | 返回一个Promise对象，resolve的结果是Ca
 **当sw注册失败或者被新的sw替换将进入此状态（只有这两种情况会进入redundant）**
 
 
-## 结合代码理解service worker生命周期
+### 结合代码理解service worker生命周期
 
 页面中的代码：
 ```js
@@ -155,7 +155,7 @@ fetch callback
 
 **install，与active事件仅仅执行一次，fetch在首次刷新也面试时是不请求的**
 
-## 更新service worker
+### 更新service worker
 
 当更新sw时，刷新页面，此时：
 1. 新的sw的install回调触发，进入installing
@@ -164,11 +164,11 @@ fetch callback
 
 代码此处可以自己尝试
 
-## waitUntil延长生命周期
+### waitUntil延长生命周期
 
 waitUntil函数传入promise作为参数，当promise执行完成才会接着往下走。
 
-### 在install事件中调用该方法
+#### 在install事件中调用该方法
 
 1.加入成功的回调：
 ```js
@@ -216,16 +216,16 @@ Uncaught (in promise) undefined
 
 **sw直接进入redundant阶段**
 
-### 在activate事件中调用该方法
+#### 在activate事件中调用该方法
 
 与install大致都一样，不同的是当你调用reject时，**sw不会进入redundant阶段，而是最终还是进入actived阶段**。
 
-## 生命周期常见应用
+### 生命周期常见应用
 1. 一般我们会在install中缓存请求，这是为了能够在下一次请求中使用到这些缓存。
 2. 在active中我们应该清除旧的缓存。
 3. 在fetch中我们便可以使用这些缓存，并且更新他们
 
-## service worker的作用域范围?
+### service worker的作用域范围?
 
 service worker只能捕获当前目录及其子目录下的请求！
 
@@ -233,7 +233,7 @@ service worker只能捕获当前目录及其子目录下的请求！
 当service worker在/pwa/sw.js下时那么只能捕获/pwa/*的请求，所以一般我们都应该将sw.js放置于/根目录下。
 
 
-## 代码示例
+### 代码示例
 
 如果你复制以下代码将在页面显示css代码
 
@@ -281,16 +281,16 @@ self.addEventListener('fetch',function (event) {
 
 ```
 
-# 离线开发的策略
+## 离线开发的策略
 1. **仅网络**
 2. **先网络后缓存**：当我们希望用户看见内容一直是最新的，那么可以使用这种模式，在fetch中更新缓存数据
 3. **缓存后网络**：当不需要用户看见最新的内容，我们可以先将缓存呈现给用户，在fetch中更新缓存，下一次用户刷新可以看见最新的缓存。（以上代码采取的就是这种）
 
-# syncManager 后台同步
+## syncManager 后台同步
 
 在用户使用web app时，网页可能会被关闭，用户连接可能会断开，甚至服务器有时候也会故障。但是，**只要用户设备上安装了浏览器**，后台同步中的操作就不会消失，直到它成功完成为止。
 
-## 注册后台同步事件
+### 注册后台同步事件
 在页面中：
 ```js
 navigator.serviceWorker.ready.then(function(registration) {     
@@ -298,7 +298,7 @@ navigator.serviceWorker.ready.then(function(registration) {
 });
 ```
 
-## 监听sync事件
+### 监听sync事件
 在sw.js中
 ```js
 self.addEventListener("sync", function(event) { 
@@ -315,7 +315,7 @@ self.addEventListener("sync", function(event) {
     }
 });
 ```
-## sync事件何时结束？
+### sync事件何时结束？
 当后台多次尝试不成功时，那么sync事件也会提供结束时的标识符**event.lastChance**。
 
 ```js
@@ -336,10 +336,10 @@ self.addEventListener("sync", event => {
     }
 });
 ```
-# postMessage
+## postMessage
 当我们将逻辑代码放入service worker中时，我们就一定会有页面与service worker通信的需求，此时postMessage便是这么一个担任通信的角色。
 
-## 1. 窗口向service worker通信
+### 1. 窗口向service worker通信
 页面代码：
 ```js
 navigator.serviceWorker.controller.postMessage( {
@@ -355,7 +355,7 @@ self.addEventListener("message", function (event) {
 });
 ```
 
-## 2. service worker向所有打开的窗口通信
+### 2. service worker向所有打开的窗口通信
 页面代码：
 ```js
 navigator.serviceWorker.addEventListener("message", function (event) {
@@ -375,7 +375,7 @@ self.clients.matchAll().then(function(clients) {
 ```
 
 
-## 3. service worker向特定窗口通信
+### 3. service worker向特定窗口通信
 
 service worker代码：
 ```js
@@ -386,7 +386,7 @@ self.clients.get("d2069ced-8f96-4d28").then(function(client) {
 });
 ```
 
-### 获得特定的客户端id
+#### 获得特定的客户端id
 ```js
 
 //通过clients对象获取客户端id
@@ -414,10 +414,10 @@ self.clients.matchAll().then(function(clients) {
 
 ```
 
-# MessageChannel
+## MessageChannel
 在介绍第四种通信方式（窗口间通信）时，我想先插入介绍一下MessageChannel这个对象，他是实现我们service worker与窗口间相互通信的一种有效的技术手段。
 
-## 演示代码
+### 演示代码
 
 ```js
 // 窗口代码
@@ -440,11 +440,11 @@ self.addEventListener("message", function (event) {
 });
 ```
 
-## 4. 窗口间的通信
+### 4. 窗口间的通信
 
 窗口间通信方式有多种，你如localStorage这些都可以实现，这里还是应该思考如何使用service worker来进行通信，这里先不再赘述。
 
-# manifest.json
+### manifest.json
 当我们的web应用已经使用以上技术做到了一系列的离线优化后，我们可以考虑将我们的应用安装在本地。
 
 页面引入：
@@ -472,7 +472,7 @@ manifest.json:
 }
 ```
 
-## 属性介绍
+### 属性介绍
 
 - **name与/或short_name：**  
 name 是应用的全名。当空间足够长时，就会使用这个字段作为显示名称，short_name 可以作为短 名的备选方案
@@ -519,7 +519,7 @@ name 是应用的全名。当空间足够长时，就会使用这个字段作为
 ...
 
 
-# 消息推送
+## 消息推送
 
 
 
