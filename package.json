@@ -35,7 +35,7 @@
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
-    "push": "git add . && git commit -a -m '不想写注释' && git push",
+    "push": "git add . && git commit -a -m '不想写注释' && git push"
   },
   "ci": {
     "version": "8"
