@@ -26,7 +26,6 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/Q.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }]
   ],
 }
