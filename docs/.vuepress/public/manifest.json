@@ -7,11 +7,11 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "/Q.png",
+      "src": "/public/Q.png",
       "type": "image/png",
       "sizes": "192x192"
     }, {
-      "src": "/Q.png",
+      "src": "/public/Q.png",
       "type": "image/png",
       "sizes": "512x512"
     }
