@@ -4,7 +4,7 @@
   "description": "这是一个学习平涛",
   "start_url": "/public/blog/index.html?utm_source=pwa",
   "scope": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
     {
       "src": "/public/Q.png",
