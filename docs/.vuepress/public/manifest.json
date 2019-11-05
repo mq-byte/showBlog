@@ -1,7 +1,7 @@
 {
   "short_name": "QLQ学习平台",
   "name": "QLQ学习平台",
-  "description": "这是一个学习平台",
+  "description": "这是一个学习平涛",
   "start_url": "/public/blog/index.html?utm_source=pwa",
   "scope": "/",
   "display": "fullscreen",
@@ -11,6 +11,9 @@
       "type": "image/png",
       "sizes": "192x192"
     }, {
+      "src": "/Q.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "theme_color": "#242424",
