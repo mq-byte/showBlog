@@ -146,4 +146,4 @@ $3不存才了
 5. soure：正则表达式文本字符串
 - 方法
 1. test他会从lastIndex开始匹配
-2. exec
+2. exec 
