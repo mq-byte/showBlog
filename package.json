@@ -10,6 +10,7 @@
     "vuepress": "^1.2.0"
   },
   "devDependencies": {
+    "@vuepress/plugin-pwa": "^1.0.0-rc.1",
     "autod": "^3.0.1",
     "autod-egg": "^1.0.0",
     "egg-bin": "^4.3.5",
@@ -47,5 +48,3 @@
   "author": "qiuyang",
   "license": "MIT"
 }
-
-
