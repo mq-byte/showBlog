@@ -3,7 +3,7 @@ home: true
 heroText: QLQ
 tagline: 这是一个纯技术的平台
 actionText: 开始 →
-actionLink: /js/regexp.html
+actionLink: /node/buffer.html
 features:
 - title: 简洁至上
   details: 简短的语句，深刻的理解
@@ -20,9 +20,8 @@ footer: MIT Licensed | Copyright © 2018 QLQ
 - 熟悉vue,react.angular,并阅读vue源码
 - 深入理解webpack
 - 完成自己ui组件库
-- 减缓java学习进度，转向node，面向公司编程
+- 深入学习node
 - PWA
 - Electron
-- WebAssembly
 - 数据可视化D3.js，three.js
 - 以上 
