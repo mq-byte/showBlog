@@ -12,7 +12,7 @@ module.exports = {
       { text: 'javaScript', link: '/js/regexp' },
       { text: 'css', link: '/css/bfc' },
       { text: 'webpack', link: '/webpack/base-config' },
-      { text: 'node', link: '/node/nodemon' },
+      { text: 'node', link: '/node/buffer' },
       { text: 'js框架', link: '/fragment/angular' },
       { text: 'pwa', link: '/pwa/PWA' }
     ]
