@@ -3,7 +3,7 @@ home: true
 heroText: QLQ
 tagline: 这是一个纯技术的平台
 actionText: 开始 →
-actionLink: /node/angular.html
+actionLink: /fragment/angular.html
 features:
 - title: 博客将涉及
   details: 偏前端，偏node，当然会涉及到数据存储如mysql、redis、mongoDB等，会有java，C++
