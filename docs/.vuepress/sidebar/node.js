@@ -4,9 +4,7 @@ module.exports = {
             title: 'node',
             collapsable: false,
             children: [
-                'buffer',
-                'stream',
-                'nodemon'
+                'buffer'
             ]
         }
     ]
